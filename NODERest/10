@@ -1,0 +1,18 @@
+10
+router.route('/speakers')
+
+    // create a bear (accessed at POST http://localhost:8080/api/speaker)
+    .post(function(req, res) {
+
+        var speaker = new Speaker(); 		// create a new instance of the Speaker model
+        speaker.name = req.body.name;  // set the speaker name (comes from the request)
+
+        // save the speaker and check for errors
+        speaker.save(function(err) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Speaker created!' });
+        });
+
+    })

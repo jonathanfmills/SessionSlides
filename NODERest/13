@@ -1,0 +1,15 @@
+13
+    .put(function(req,res){
+        Speaker.findById(req.params.speaker_Id, function(err,speaker){
+            if(err)
+                res.send(err);
+            //console.log(req)
+            speaker.name = req.body.name;
+            speaker.save(function (err) {
+                if(err)
+                    res.send(err)
+                res.json({message: 'Speaker Updated'});
+
+            });
+        });
+    })

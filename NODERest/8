@@ -1,0 +1,18 @@
+8
+
+var Speaker = require('./app/models/Speaker');
+
+
+Model..
+//8
+
+// app/models/Speaker.js
+
+var mongoose     = require('mongoose');
+var Schema       = mongoose.Schema;
+
+var SpeakerSchema   = new Schema({
+    name: String
+});
+
+module.exports = mongoose.model('Speaker', SpeakerSchema);

@@ -1,0 +1,8 @@
+14
+.delete(function(req,res){
+        Speaker.remove({_id:req.params.speaker_Id},function(err,speaker){
+            if(err)
+                res.send(err)
+            res.json({message:"speaker deleted"})
+        })
+    })

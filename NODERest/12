@@ -1,0 +1,9 @@
+12
+router.route('/speakers/:speaker_Id')
+    .get(function (req, res) {
+        Speaker.findById(req.params.speaker_Id, function(err,speaker){
+            if(err)
+                res.send(err);
+            res.json(speaker);
+        });
+    })

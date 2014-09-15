@@ -1,0 +1,10 @@
+11
+    .get(function(req, res){
+        Speaker.find(function(err, speakers){
+            if(err)
+                res.send(err)
+
+            res.json(speakers)
+
+        })
+    });
